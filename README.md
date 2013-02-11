@@ -20,24 +20,37 @@ node app
 foreman start
 ```
 
-### Parameters (Optional)
+### Parameters
 
-**text**
-
-- change the text of the placeholder. 
-- default: `$height + 'x' + $width`
-
-**bg**
-
-- change background color.
-- default: `#aaa`
-
-**fg**
-
-- change foreground color.
-- default: `#fff`
-
-**fs**
-
-- change font size
-- default: `40`
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Required</th>
+        <th>Default Value</th>
+        <th>Description</th>
+    </tr>
+    <tr>
+        <td>text</td>
+        <td>No</td>
+        <td><code>$heightx$width</code></td>
+        <td>text of the placeholder</td>
+    </tr>
+    <tr>
+        <td>bg</td>
+        <td>No</td>
+        <td><code>#aaa</code></td>
+        <td>background color</td>
+    </tr>
+    <tr>
+        <td>fg</td>
+        <td>No</td>
+        <td><code>#fff</code></td>
+        <td>foreground color</td>
+    </tr>
+    <tr>
+        <td>fs</td>
+        <td>No</td>
+        <td><code>40</code></td>
+        <td>font size</td>
+    </tr>
+</table>
