@@ -1,7 +1,8 @@
 var express = require('express')
             , http = require('http')
             , gm = require('gm')
-            , app = express();
+            , app = express()
+            , imageMagick = gm.subClass({ imageMagick: true });
 
 app.configure(function(){
   app.set('port', process.env.PORT || 3000);
@@ -27,7 +28,7 @@ app.get('/:width([0-9]+)x:height([0-9]+)', function(req,res,next) {
        , fg = ('fg' in req.query) ? req.query.fg : '#fff'
        , fs = ('fs' in req.query) ? req.query.fs : 40;
 
-  gm(width, height, bg)
+  imageMagick(width, height, bg)
   .fontSize(fs)
   .fill(fg)
   .font('SourceCodePro-Light.ttf')
