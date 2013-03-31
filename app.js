@@ -16,7 +16,7 @@ app.configure('development', function(){
 });
 
 app.get('/:width([0-9]+)x:height([0-9]+)', function(req,res,next) {
-  var canvas, height, width, _ref, text, bg, fg, fs;
+  var height, width, _ref, text, bg, fg, fs;
 
   _ref = [parseInt(req.params.width)
        , parseInt(req.params.height)]
@@ -25,7 +25,7 @@ app.get('/:width([0-9]+)x:height([0-9]+)', function(req,res,next) {
        , bg = '#aaa'
        , fg = '#fff'
        , fs = 40;
-  
+
   if (typeof req.query.text !== 'undefined') {
     text = req.query.text;
   }
