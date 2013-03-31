@@ -20,24 +20,12 @@ app.get('/:width([0-9]+)x:height([0-9]+)', function(req,res,next) {
 
   _ref = [parseInt(req.params.width)
        , parseInt(req.params.height)]
-       , width = _ref[0], height = _ref[1]
-       , text = width + 'x' + height
-       , bg = '#aaa'
-       , fg = '#fff'
-       , fs = 40;
-
-  if (typeof req.query.text !== 'undefined') {
-    text = req.query.text;
-  }
-  if (typeof req.query.bg !== 'undefined') {
-    bg = req.query.bg;
-  }
-  if (typeof req.query.fg !== 'undefined') {
-    fg = req.query.fg;
-  }
-  if (typeof req.query.fs !== 'undefined') {
-    fs = req.query.fs;
-  }
+       , width = _ref[0]
+       , height = _ref[1]
+       , text = ('text' in req.query) ? req.query.txt : (width + 'x' + height)
+       , bg = ('bg' in req.query) ? req.query.bg : '#aaa'
+       , fg = ('fg' in req.query) ? req.query.fg : '#fff'
+       , fs = ('fs' in req.query) ? req.query.fs : 40;
 
   gm(width, height, bg)
   .fontSize(fs)
